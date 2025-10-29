@@ -92,6 +92,8 @@ class OpenLaneV2SubsetADataset(Custom3DDataset):
         trans = []
         cam2imgs = []
         for i, camera in enumerate(frame.get_camera_list()):
+            if camera == 'sd_map':
+                continue
 
             assert camera == 'ring_front_center' if i == 0 else True, \
                 'the first image should be the front view'

@@ -6,6 +6,7 @@ PORT=${PORT:-29500}
 
 WORK_DIR=work_dirs/topomlp_sA_near
 mkdir -p ${WORK_DIR}
+timestamp=`date +"%y%m%d.%H%M%S"`
 
 ~/containers/python_topomlp -m torch.distributed.run \
     --nproc_per_node=$GPUS \

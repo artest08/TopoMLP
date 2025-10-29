@@ -67,7 +67,9 @@ class TopoLTHead(nn.Module):
 
     def get_topology(self, pred_adj_list):
         pred_adj = pred_adj_list.squeeze(-1).sigmoid()
-        # pred_adj = pred_adj + 0.3
+
+        pred_adj_index = pred_adj > 0.05
+        pred_adj[pred_adj_index] = pred_adj[pred_adj_index] + 1.0
 
         # pred_adj_index = pred_adj > 0.5
         # pred_adj[pred_adj_index] = 1.0

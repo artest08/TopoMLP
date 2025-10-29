@@ -5,7 +5,6 @@ CHECKPOINT=work_dirs/topomlp_setA_r50_wo_yolov8/topomlp_setA_r50_wo_yolov8_e24.p
 
 GPUS=$1
 PORT=${PORT:-29500}
-MASTER_ADDR=${MASTER_ADDR:-"127.0.0.1"}
 
 WORK_DIR=work_dirs/toponet_mlp_sA_test
 timestamp=`date +"%y%m%d.%H%M%S"`

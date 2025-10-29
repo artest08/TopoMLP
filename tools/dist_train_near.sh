@@ -5,6 +5,7 @@ GPUS=$1
 PORT=${PORT:-29500}
 
 WORK_DIR=work_dirs/topomlp_sA_near
+mkdir -p ${WORK_DIR}
 
 python -m torch.distributed.run \
     --nproc_per_node=$GPUS \

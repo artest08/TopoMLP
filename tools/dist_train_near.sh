@@ -14,5 +14,5 @@ mkdir -p ${WORK_DIR}
     $CONFIG \
     --seed 42 \
     --work-dir ${WORK_DIR} \
-    --launcher pytorch ${@:1} \
+    --launcher pytorch ${@:2} \
     2>&1 | tee ${WORK_DIR}/train.${timestamp}.log

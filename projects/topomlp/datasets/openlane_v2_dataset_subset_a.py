@@ -32,7 +32,8 @@ from mmdet.datasets import DATASETS
 from mmdet3d.datasets import Custom3DDataset
 
 from openlanev2.dataset import Collection
-from openlanev2.evaluation import evaluate as openlanev2_evaluate
+# from openlanev2.evaluation import evaluate as openlanev2_evaluate
+from projects.openlanev2_evaluation.evaluate_v11 import evaluate as openlanev2_evaluate
 from openlanev2.preprocessing import check_results
 from openlanev2.visualization.utils import COLOR_DICT
 import pickle
@@ -91,6 +92,8 @@ class OpenLaneV2SubsetADataset(Custom3DDataset):
         trans = []
         cam2imgs = []
         for i, camera in enumerate(frame.get_camera_list()):
+            if camera == 'sd_map':
+                continue
 
             assert camera == 'ring_front_center' if i == 0 else True, \
                 'the first image should be the front view'

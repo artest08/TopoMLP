@@ -4,7 +4,7 @@ CONFIG=projects/configs/topomlp_setA_r50_wo_yolov8_near.py
 GPUS=$1
 PORT=${PORT:-29500}
 
-WORK_DIR=work_dirs/topomlp_sA_near
+WORK_DIR=work_dirs/topomlp_sA_near_v2
 mkdir -p ${WORK_DIR}
 timestamp=`date +"%y%m%d.%H%M%S"`
 

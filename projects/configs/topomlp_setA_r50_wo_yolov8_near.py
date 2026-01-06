@@ -298,7 +298,7 @@ lr_config = dict(
 runner = dict(type='EpochBasedRunner', max_epochs=24)
 evaluation = dict(interval=24, pipeline=test_pipeline)
 
-checkpoint_config = dict(interval=1, max_keep_ckpts=5)
+checkpoint_config = dict(interval=1, max_keep_ckpts=25)
 
 # yapf:disable
 log_config = dict(
